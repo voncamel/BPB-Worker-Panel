@@ -8,7 +8,7 @@
     <link rel="icon" href="/favicon.ico" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=add_circle,autorenew,check_circle,content_copy,delete,download,fingerprint,info,key_vertical,open_in_new,qr_code,settings,share,terminal,tune,verified,visibility,visibility_off&display=block" />
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=add_circle,autorenew,check_circle,content_copy,delete,dns,download,fingerprint,info,key_vertical,open_in_new,qr_code,settings,share,terminal,tune,verified,visibility,visibility_off&display=block" />
     __STYLE__
 </head>
 
@@ -162,6 +162,15 @@
                                 <option value="qq">qq</option>
                                 <option value="random">random</option>
                                 <option value="randomized">randomized</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-control">
+                        <label for="enableECH">🎭 ECH</label>
+                        <div>
+                            <select id="enableECH" name="enableECH">
+                                <option value="true">Enabled</option>
+                                <option value="false">Disabled</option>
                             </select>
                         </div>
                     </div>
@@ -479,15 +488,18 @@
                                         <label for="blockUDP443">QUIC</label>
                                     </div>
                                     <div class="routing">
-                                        <input type="checkbox" id="blockMalware" name="blockMalware" value="true" onchange="handleRiskyRules(event)">
+                                        <input type="checkbox" id="blockMalware" name="blockMalware" value="true"
+                                            onchange="handleRiskyRules(event)">
                                         <label for="blockMalware">Malware</label>
                                     </div>
                                     <div class="routing">
-                                        <input type="checkbox" id="blockPhishing" name="blockPhishing" value="true" onchange="handleRiskyRules(event)">
+                                        <input type="checkbox" id="blockPhishing" name="blockPhishing" value="true"
+                                            onchange="handleRiskyRules(event)">
                                         <label for="blockPhishing">Phishing</label>
                                     </div>
                                     <div class="routing">
-                                        <input type="checkbox" id="blockCryptominers" name="blockCryptominers" value="true" onchange="handleRiskyRules(event)">
+                                        <input type="checkbox" id="blockCryptominers" name="blockCryptominers"
+                                            value="true" onchange="handleRiskyRules(event)">
                                         <label for="blockCryptominers">Cryptominers</label>
                                     </div>
                                 </div>
@@ -1023,6 +1035,17 @@
                 </table>
             </div>
         </details>
+    </div>
+    <div class="form-container container">
+        <h2><span class="material-symbols-rounded">dns</span> DNS over HTTPS</h2>
+        <div class="value-container">
+            <div class="output-container">
+                <span id="doh" class="output"></span>
+            </div>
+            <span class="material-symbols-rounded" onclick="copyToClipboard(document.getElementById('doh').textContent)">
+                content_copy
+            </span>
+        </div>
     </div>
     <div class="form-container container">
         <div id="resetPassModal" class="modal">
